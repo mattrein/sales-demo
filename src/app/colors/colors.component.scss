@@ -4,5 +4,25 @@
 
 table {
     width: 100%;
-  }
-  
+}
+
+input[type="color"] {
+    -webkit-appearance: none;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: transparent;
+    padding: 0;
+}
+
+/* Specific styles for Webkit/Blink browsers like Chrome and Safari */
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+    border: none;
+    border-radius: 50%;
+}

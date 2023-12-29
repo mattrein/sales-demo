@@ -1,31 +1,28 @@
 <div class="colors-container">
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-
-        <!--- Note that these columns can be defined in any order.
-          The actual rendered columns are set as a property on the row definition" -->
-
-        <!-- Position Column -->
-        <ng-container matColumnDef="order">
-            <th mat-header-cell *matHeaderCellDef> Order </th>
-            <td mat-cell *matCellDef="let color"> {{color.order}} </td>
+        <ng-container matColumnDef="colorId">
+            <th mat-header-cell *matHeaderCellDef> Id </th>
+            <td mat-cell *matCellDef="let color"> {{color.colorId}} </td>
         </ng-container>
-
-        <!-- Name Column -->
         <ng-container matColumnDef="name">
             <th mat-header-cell *matHeaderCellDef> Name </th>
             <td mat-cell *matCellDef="let color"> {{color.name}} </td>
         </ng-container>
-
-        <!-- Weight Column -->
         <ng-container matColumnDef="swatch">
             <th mat-header-cell *matHeaderCellDef> Swatch </th>
-            <td mat-cell *matCellDef="let color"> <input type="color" [value]="color.hex"/> </td>
+            <td mat-cell *matCellDef="let color"> <input type="color" (change)="updateColors($event, color.colorId)" [value]="color.hex"/> </td>
         </ng-container>
-
-        <!-- Symbol Column -->
         <ng-container matColumnDef="hex">
             <th mat-header-cell *matHeaderCellDef> Hex </th>
             <td mat-cell *matCellDef="let color"> {{color.hex}} </td>
+        </ng-container>
+        <ng-container matColumnDef="shade">
+            <th mat-header-cell *matHeaderCellDef> Shade </th>
+            <td mat-cell *matCellDef="let color"> <input type="color" disabled [value]="color.shade"/> </td>
+        </ng-container>
+        <ng-container matColumnDef="tint">
+            <th mat-header-cell *matHeaderCellDef> Tint </th>
+            <td mat-cell *matCellDef="let color"> <input type="color" disabled [value]="color.tint"/> </td>
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

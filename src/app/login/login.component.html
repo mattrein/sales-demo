@@ -1,0 +1,25 @@
+<mat-grid-list [cols]="settings.cols" dir="rtl" [rowHeight]="settings.rowHeight">
+    <mat-grid-tile dir="ltr">
+        <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+            <h2>Login</h2>
+            <mat-form-field appearance="fill">
+                <mat-label>Username</mat-label>
+                <input matInput placeholder="yourname@email.com">
+                <mat-icon matSuffix>person</mat-icon>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Password</mat-label>
+                <input matInput placeholder="Password1234">
+                <mat-icon matSuffix>key</mat-icon>
+            </mat-form-field>
+            <button mat-raised-button color="primary" [disabled]="!loginForm.form.valid">Login</button>
+        </form>
+    </mat-grid-tile>
+    <mat-grid-tile dir="ltr" class="hero">
+        <div class="hero-splash"></div>
+        <div class="hero-content">
+            <h2>This is a demo. This is only a demo.</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia fugiat cum neque explicabo numquam dolores consequuntur, nemo voluptatibus nisi culpa hic porro eligendi eaque, eveniet obcaecati perferendis, fuga esse amet!</p>     
+        </div>
+    </mat-grid-tile>
+</mat-grid-list>

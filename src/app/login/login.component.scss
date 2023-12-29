@@ -1,0 +1,30 @@
+mat-form-field {
+    display: block;
+    input, mat-label {
+        padding-left: 20px;
+    }
+}
+
+.hero {
+    background-color: rgb(15, 30, 55);
+}
+.hero-splash {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background-image: url('/assets/ionic_blue.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-blend-mode: lighten;
+    background-position: -100px 50%;
+    opacity: .2;
+}
+
+.hero-content {
+    position: relative;
+    padding: 10%;
+    color: white;
+}

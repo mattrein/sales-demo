@@ -7,6 +7,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { CommonModule } from '@angular/common';
 import { RouterModule, RouterOutlet } from '@angular/router';
+import MyDevice from '../../plugins/myDevice';
 
 @Component({
   selector: 'app-home',
@@ -21,6 +22,10 @@ export class HomeComponent {
   sidenav!: MatSidenav;
   isMobile= true;
   isCollapsed = true;
+
+  batteryLevel?: number;
+  isCharging?: boolean;
+
   constructor(private observer: BreakpointObserver) {}
 
   ngOnInit() {
@@ -31,6 +36,14 @@ export class HomeComponent {
         this.isMobile = false;
       }
     });
+
+    this.loadBatteryInfo();
+  }
+
+  async loadBatteryInfo() {
+    let { batteryLevel, isCharging } = await MyDevice.getBatteryInfo();
+    this.batteryLevel = batteryLevel;
+    this.isCharging = isCharging;
   }
 
   toggleMenu() {

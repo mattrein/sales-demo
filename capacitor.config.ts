@@ -6,6 +6,9 @@ const config: CapacitorConfig = {
   webDir: 'dist/sales-demo/browser',
   server: {
     androidScheme: 'https'
+  }, 
+  ios: {
+    webContentsDebuggingEnabled: true
   }
 };
 

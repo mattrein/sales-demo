@@ -1,3 +1,3 @@
 export interface MyDevicePlugin {
-    getBatteryInfo(): Promise<{ batteryLevel: number, isCharging: boolean }>
+    getBatteryInfo(options: {includeCharging: boolean}): Promise<{ batteryLevel: number, isCharging?: boolean }>
 }

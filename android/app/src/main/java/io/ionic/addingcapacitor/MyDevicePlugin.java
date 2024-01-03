@@ -16,10 +16,16 @@ public class MyDevicePlugin extends Plugin {
 
   @PluginMethod()
   public void getBatteryInfo(PluginCall call) {
+    boolean includeCharging =  call.getBoolean("includeCharging", false);
+
     JSObject r = new JSObject();
     Context context = getContext();
     r.put("batteryLevel", getBatteryLevel(context));
-    r.put("isCharging", isCharging(context));
+
+    if(includeCharging) {
+      r.put("isCharging", isCharging(context));
+    }
+
     call.resolve(r);
   }
 

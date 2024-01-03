@@ -41,7 +41,8 @@ export class HomeComponent {
   }
 
   async loadBatteryInfo() {
-    let { batteryLevel, isCharging } = await MyDevice.getBatteryInfo();
+    let { batteryLevel, isCharging } = await MyDevice.getBatteryInfo({includeCharging: true});
+    console.log("isCharging: " + isCharging)
     this.batteryLevel = batteryLevel;
     this.isCharging = isCharging;
   }

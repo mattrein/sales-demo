@@ -9,6 +9,14 @@ const config: CapacitorConfig = {
   }, 
   ios: {
     webContentsDebuggingEnabled: true
+  },
+  plugins: {
+    LiveUpdates: {
+      appId: '93bf7e9a',
+      channel: 'Demo',
+      autoUpdateMethod: 'background',
+      maxVersions: 2
+    }
   }
 };
 

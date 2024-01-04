@@ -1,0 +1,7 @@
+{
+  "name": "sales-demo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "custom"
+}

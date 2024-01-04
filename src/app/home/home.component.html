@@ -3,6 +3,15 @@
     <mat-icon>menu</mat-icon>
   </button>
   <h1>Ionic Demo</h1>
+  @if(batteryLevel) {
+    <div class="example-spacer"></div>
+    <button mat-icon-button *ngIf="!isCharging" aria-label="Battery icon">
+      <mat-icon>battery_full</mat-icon>
+    </button>
+    <button mat-icon-button *ngIf="isCharging" aria-label="Charging icon">
+      <mat-icon>battery_charging_full</mat-icon>
+    </button>
+  }
 </mat-toolbar>
 <mat-sidenav-container autosize>
   <mat-sidenav [ngClass]="!isCollapsed ? 'expanded' : ''" [mode]="isMobile ? 'over' : 'side'"

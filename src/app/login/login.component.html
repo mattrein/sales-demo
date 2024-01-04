@@ -1,7 +1,7 @@
 <mat-grid-list [cols]="settings.cols" dir="rtl" [rowHeight]="settings.rowHeight">
     <mat-grid-tile dir="ltr">
         <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
-            <h2>Login</h2>
+            <h2>Sign In</h2>
             <mat-form-field appearance="fill">
                 <mat-label>Username</mat-label>
                 <input matInput placeholder="yourname@email.com">
@@ -12,7 +12,7 @@
                 <input matInput placeholder="Password1234">
                 <mat-icon matSuffix>key</mat-icon>
             </mat-form-field>
-            <button mat-raised-button color="primary" [disabled]="!loginForm.form.valid">Login</button>
+            <button mat-raised-button color="primary" [disabled]="!loginForm.form.valid">Sign in</button>
         </form>
     </mat-grid-tile>
     <mat-grid-tile dir="ltr" class="hero">
